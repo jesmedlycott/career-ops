@@ -1,7 +1,7 @@
 # Personal data (user fills these)
 data/applications.md
-data/pipeline.md
-data/scan-history.tsv
+# data/pipeline.md -- committed to personal fork for scheduled agent
+# data/scan-history.tsv -- committed to personal fork for scheduled agent
 reports/*.md
 !reports/.gitkeep
 output/*
@@ -16,9 +16,9 @@ jds/*
 !jds/.gitkeep
 
 # User config and customization (never auto-updated)
-config/profile.yml
-portals.yml
-modes/_profile.md
+# config/profile.yml -- committed to personal fork for scheduled agent
+# portals.yml -- committed to personal fork for scheduled agent
+# modes/_profile.md -- committed to personal fork for scheduled agent
 .update-dismissed
 .update-lock
 

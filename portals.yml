@@ -1,0 +1,343 @@
+# Portal Scanner Configuration — Jason Medlycott
+# Target: Fundraising, Programme Management, Conservation/NGO roles — Asia Pacific
+#
+# Strategy (3 levels):
+#   1. Playwright → careers_url of each company (real-time, reliable)
+#   2. Greenhouse API → structured JSON (fast, Greenhouse-only)
+#   3. WebSearch with site: filters (broad discovery, may be stale)
+
+# -- Title filter --
+title_filter:
+  positive:
+    # -- Fundraising & Development --
+    - "Fundraising"
+    - "Development Officer"
+    - "Development Manager"
+    - "Resource Mobilisation"
+    - "Resource Mobilization"
+    - "Donor Relations"
+    - "Major Gifts"
+    - "Philanthropy"
+    - "Grants"
+    - "Grant Writer"
+    - "Grant Manager"
+    - "Bid Manager"
+    - "Bid Writer"
+    - "Partnerships"
+    - "Corporate Partnerships"
+    - "Institutional Funding"
+    # -- Programme & Project Management --
+    - "Programme Manager"
+    - "Program Manager"
+    - "Programme Officer"
+    - "Program Officer"
+    - "Project Manager"
+    - "Project Officer"
+    # -- Conservation & Environment --
+    - "Conservation"
+    - "Marine"
+    - "Ocean"
+    - "Environment"
+    - "Environmental"
+    - "Coastal"
+    - "Blue Economy"
+    - "Climate"
+    - "Sustainability"
+    - "Wildlife"
+    - "Biodiversity"
+    # -- Community & Engagement --
+    - "Community Engagement"
+    - "Stakeholder Engagement"
+    - "Outreach"
+    # -- NGO / Non-profit --
+    - "Non-profit"
+    - "Nonprofit"
+    - "NGO"
+    - "Social Impact"
+    - "International Development"
+  negative:
+    - "Intern"
+    - "Junior"
+    - "Entry Level"
+    - "Data Scientist"
+    - "Software Engineer"
+    - "Developer"
+    - "IT "
+    - "Finance Manager"  # accounting role vs conservation finance
+    - "Accountant"
+    - "Legal"
+  seniority_boost:
+    - "Senior"
+    - "Lead"
+    - "Head"
+    - "Director"
+    - "Manager"
+
+# -- Search queries --
+search_queries:
+
+  # -- Conservation job boards --
+  - name: Conservation Careers — Fundraising
+    query: 'site:conservation-careers.com "fundraising" OR "development officer" OR "grants" Asia Pacific OR Thailand OR Southeast Asia'
+    enabled: true
+
+  - name: Conservation Careers — Programme Manager
+    query: 'site:conservation-careers.com "programme manager" OR "program manager" OR "conservation" Asia Pacific OR marine OR ocean'
+    enabled: true
+
+  - name: Idealist — Marine/Ocean Conservation
+    query: 'site:idealist.org "marine" OR "ocean" OR "conservation" "fundraising" OR "programme" OR "development" Asia Pacific'
+    enabled: true
+
+  - name: Idealist — Fundraising NGO Asia
+    query: 'site:idealist.org "fundraising manager" OR "development officer" OR "grants manager" Asia OR Southeast Asia OR Thailand'
+    enabled: true
+
+  - name: ReliefWeb — Programme Manager
+    query: 'site:reliefweb.int "programme manager" OR "program officer" conservation OR environment Asia Pacific'
+    enabled: true
+
+  - name: ReliefWeb — Resource Mobilisation
+    query: 'site:reliefweb.int "resource mobilisation" OR "fundraising" OR "grants" Asia Pacific OR Southeast Asia'
+    enabled: true
+
+  - name: Devex — Conservation Fundraising
+    query: 'site:devex.com "fundraising" OR "development officer" OR "resource mobilisation" conservation OR marine OR ocean Asia Pacific'
+    enabled: true
+
+  - name: Devex — Programme Manager Asia
+    query: 'site:devex.com "programme manager" OR "program manager" environment OR conservation Asia OR Southeast Asia'
+    enabled: true
+
+  - name: LinkedIn — Marine Conservation Fundraising
+    query: '"marine conservation" OR "ocean conservation" "fundraising" OR "development manager" OR "partnerships" Asia Pacific'
+    enabled: true
+
+  - name: LinkedIn — NGO Programme Manager Thailand
+    query: '"programme manager" OR "program manager" NGO OR "non-profit" Thailand OR "Southeast Asia" OR "Asia Pacific" conservation OR environment'
+    enabled: true
+
+  # -- WWF / major conservation orgs --
+  - name: WWF Jobs — Asia Pacific
+    query: 'site:careers.wwf.org.uk OR site:wwf.org.au/about-us/careers "fundraising" OR "programme" OR "partnerships" Asia OR Pacific'
+    enabled: true
+
+  - name: IUCN Jobs
+    query: 'site:iucn.org/jobs "fundraising" OR "programme manager" OR "resource mobilisation" OR "partnerships"'
+    enabled: true
+
+  # -- Broad NGO boards --
+  - name: CharityJob — Fundraising
+    query: 'site:charityjob.co.uk "fundraising manager" OR "development manager" OR "grants manager" international OR remote'
+    enabled: true
+
+  - name: Third Sector — Fundraising Asia
+    query: 'site:thirdsector.co.uk "fundraising" OR "development" "Asia" OR "international" conservation OR environment'
+    enabled: true
+
+  - name: NGO Connect — Conservation roles
+    query: '"NGO" "fundraising" OR "programme manager" "marine" OR "ocean" OR "conservation" Asia Pacific remote'
+    enabled: true
+
+# -- Tracked organisations --
+
+  # -- Global conservation orgs --
+
+  - name: WWF International
+    careers_url: https://careers.wwf.org.uk
+    scan_method: websearch
+    scan_query: 'site:careers.wwf.org.uk "fundraising" OR "programme" OR "partnerships" OR "development"'
+    notes: "Global. Strong Asia Pacific presence. Fundraising and programme roles."
+    enabled: true
+
+  - name: WWF Australia
+    careers_url: https://www.wwf.org.au/about-us/careers
+    scan_method: websearch
+    scan_query: 'site:wwf.org.au "fundraising" OR "programme" OR "marine" OR "conservation"'
+    notes: "Sydney. Marine conservation programmes across Asia Pacific."
+    enabled: true
+
+  - name: WWF Thailand
+    careers_url: https://www.wwfthailand.org/en/get-involved/careers
+    scan_method: websearch
+    scan_query: 'wwf thailand jobs "fundraising" OR "programme" OR "conservation"'
+    notes: "Bangkok. Conservation programmes in Thailand and Mekong region."
+    enabled: true
+
+  - name: IUCN
+    careers_url: https://www.iucn.org/get-involved/jobs
+    scan_method: websearch
+    scan_query: 'site:iucn.org/jobs "Asia" OR "Pacific" "fundraising" OR "programme" OR "resource mobilisation"'
+    notes: "Gland Switzerland + global offices. Marine and conservation focus."
+    enabled: true
+
+  - name: The Nature Conservancy
+    careers_url: https://careers.nature.org
+    scan_method: websearch
+    scan_query: 'site:careers.nature.org "Asia Pacific" OR "Asia" "fundraising" OR "development" OR "programme"'
+    notes: "US-based global. Asia Pacific programmes including marine."
+    enabled: true
+
+  - name: Conservation International
+    careers_url: https://www.conservation.org/careers
+    scan_method: websearch
+    scan_query: 'site:conservation.org/careers "Asia" OR "Pacific" "fundraising" OR "programme" OR "development"'
+    notes: "Arlington VA + global. Ocean and biodiversity focus."
+    enabled: true
+
+  - name: WCS (Wildlife Conservation Society)
+    careers_url: https://wcs.org/about-us/careers
+    scan_method: websearch
+    scan_query: '"WCS" OR "wildlife conservation society" careers "Asia" OR "Pacific" "fundraising" OR "programme"'
+    notes: "New York + global. Strong Southeast Asia presence."
+    enabled: true
+
+  - name: Rare
+    careers_url: https://www.rare.org/careers
+    scan_method: websearch
+    scan_query: 'site:rare.org/careers "Asia" OR "Pacific" "fundraising" OR "programme" OR "development"'
+    notes: "Arlington VA + Asia Pacific offices. Community-based conservation."
+    enabled: true
+
+  # -- Marine/Ocean specific orgs --
+
+  - name: Oceana
+    careers_url: https://oceana.org/about/careers
+    scan_method: websearch
+    scan_query: 'site:oceana.org/about/careers "fundraising" OR "development" OR "programme" OR "partnerships"'
+    notes: "Washington DC + global. Ocean conservation advocacy and campaigns."
+    enabled: true
+
+  - name: Ocean Conservancy
+    careers_url: https://oceanconservancy.org/careers
+    scan_method: websearch
+    scan_query: 'site:oceanconservancy.org/careers "fundraising" OR "development" OR "programme"'
+    notes: "Washington DC. Trash Free Seas, Arctic programme."
+    enabled: true
+
+  - name: Blue Marine Foundation
+    careers_url: https://www.bluemarinefoundation.com/about/careers
+    scan_method: websearch
+    scan_query: '"blue marine foundation" careers "fundraising" OR "programme" OR "development"'
+    notes: "London UK. Marine protected areas. Good for fundraising roles."
+    enabled: true
+
+  - name: Coral Triangle Initiative
+    careers_url: https://www.coraltriangleinitiative.org
+    scan_method: websearch
+    scan_query: '"coral triangle" careers OR jobs "fundraising" OR "programme" OR "development"'
+    notes: "Manila Philippines. Coral Triangle governments + NGOs. Regional focus."
+    enabled: true
+
+  - name: Sea Shepherd
+    careers_url: https://www.seashepherd.org/careers
+    scan_method: websearch
+    scan_query: 'site:seashepherd.org/careers "fundraising" OR "development" OR "programme" OR "engagement"'
+    notes: "Global. Marine conservation direct action. Passionate donor base."
+    enabled: true
+
+  - name: Reef Check
+    careers_url: https://www.reefcheck.org/about-us/employment
+    scan_method: websearch
+    scan_query: '"reef check" careers OR jobs "fundraising" OR "programme" OR "development"'
+    notes: "Global coral reef monitoring. Asia Pacific strong presence."
+    enabled: true
+
+  # -- Asia Pacific regional NGOs --
+
+  - name: TRAFFIC
+    careers_url: https://www.traffic.org/about-us/careers
+    scan_method: websearch
+    scan_query: 'site:traffic.org "fundraising" OR "programme" OR "development" OR "partnerships" Asia'
+    notes: "Cambridge UK + Asia offices. Wildlife trade monitoring. Bangkok office."
+    enabled: true
+
+  - name: RECOFTC
+    careers_url: https://www.recoftc.org/work-with-us
+    scan_method: websearch
+    scan_query: '"RECOFTC" careers OR jobs "fundraising" OR "programme" OR "resource mobilisation"'
+    notes: "Bangkok. Forestry and community-based conservation across Asia Pacific."
+    enabled: true
+
+  - name: SEA Conservation
+    careers_url: https://sea-conservation.org
+    scan_method: websearch
+    scan_query: '"SEA conservation" OR "Southeast Asia conservation" jobs "fundraising" OR "programme"'
+    notes: "Southeast Asia focused marine conservation."
+    enabled: true
+
+  - name: Asia Pacific Network for Global Change Research (APN)
+    careers_url: https://www.apn-gcr.org/about/apn-careers
+    scan_method: websearch
+    scan_query: '"APN" "global change" careers "programme" OR "grants" Asia Pacific'
+    notes: "Kobe Japan. Regional research network, programme and grants roles."
+    enabled: true
+
+  # -- UN / Intergovernmental --
+
+  - name: UNDP Asia Pacific
+    careers_url: https://jobs.undp.org
+    scan_method: websearch
+    scan_query: 'site:jobs.undp.org "Asia" OR "Pacific" OR "Thailand" "programme" OR "environment" OR "conservation"'
+    notes: "Bangkok regional hub. Environment and climate programmes."
+    enabled: true
+
+  - name: UNEP Bangkok
+    careers_url: https://www.unep.org/about-un-environment/employment
+    scan_method: websearch
+    scan_query: '"UNEP" "Bangkok" OR "Asia Pacific" careers "programme" OR "fundraising" OR "partnerships"'
+    notes: "Bangkok. UN Environment Programme Asia Pacific office."
+    enabled: true
+
+  - name: UN Women Asia Pacific
+    careers_url: https://www.unwomen.org/en/about-us/employment
+    scan_method: websearch
+    scan_query: '"UN Women" "Asia Pacific" OR "Bangkok" careers "programme" OR "resource mobilisation"'
+    notes: "Bangkok. Gender equality programmes. Resource mobilisation roles."
+    enabled: true
+
+  # -- Development Finance & Foundations --
+
+  - name: Asian Development Bank (ADB)
+    careers_url: https://www.adb.org/work-with-us/careers
+    scan_method: websearch
+    scan_query: 'site:adb.org/work-with-us "environment" OR "conservation" OR "climate" "programme" OR "partnerships"'
+    notes: "Manila Philippines. Development finance. Environment and climate programmes."
+    enabled: true
+
+  - name: MAVA Foundation
+    careers_url: https://www.mava-foundation.org/about-mava/work-with-us
+    scan_method: websearch
+    scan_query: '"MAVA foundation" careers "fundraising" OR "programme" OR "partnerships" marine OR conservation'
+    notes: "Switzerland. Conservation focused. Marine and coastal programmes."
+    enabled: true
+
+  # -- Education / Social Impact (relevant to CV background) --
+
+  - name: Room to Read
+    careers_url: https://www.roomtoread.org/careers
+    scan_method: websearch
+    scan_query: 'site:roomtoread.org/careers "Asia" OR "Thailand" "fundraising" OR "development" OR "programme"'
+    notes: "San Francisco + Asia offices. Education NGO. Relevant to India/SEA background."
+    enabled: true
+
+  - name: Teach For All
+    careers_url: https://teachforall.org/careers
+    scan_method: websearch
+    scan_query: 'site:teachforall.org/careers "Asia" "fundraising" OR "partnerships" OR "programme"'
+    notes: "Global education NGO network. Relevant to Jason's education sector background."
+    enabled: true
+
+  - name: Save the Children Asia Pacific
+    careers_url: https://www.savethechildren.net/careers
+    scan_method: websearch
+    scan_query: '"save the children" "Asia Pacific" OR "Thailand" careers "fundraising" OR "development" OR "programme"'
+    notes: "Global. Bangkok regional office. Fundraising and programme roles."
+    enabled: true
+
+  - name: Oxfam Asia
+    careers_url: https://www.oxfam.org/en/jobs
+    scan_method: websearch
+    scan_query: 'site:oxfam.org/en/jobs "Asia" OR "Thailand" "fundraising" OR "partnerships" OR "programme"'
+    notes: "Bangkok regional office. Development and humanitarian programmes."
+    enabled: true

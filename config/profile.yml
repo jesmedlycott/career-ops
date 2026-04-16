@@ -1,0 +1,73 @@
+# Career-Ops Profile Configuration
+# This is the single source of truth for your personal data across all modes.
+
+candidate:
+  full_name: "Jason Medlycott"
+  email: "jesmedlycott@gmail.com"
+  phone: "+66 84 206 0797"
+  location: "Bangkok, Thailand"
+  linkedin: "https://www.linkedin.com/in/jason-medlycott-222155b/"
+  portfolio_url: ""
+  github: ""
+  twitter: ""
+
+target_roles:
+  primary:
+    - "Fundraising & Partnerships Manager"
+    - "Programme Manager (Marine/Ocean)"
+    - "Development Officer"
+    - "Grants & Philanthropy Manager"
+    - "Resource Mobilisation Lead"
+    - "Conservation Finance Officer"
+    - "Community Engagement Coordinator"
+  archetypes:
+    - name: "Fundraising & Partnerships Manager"
+      level: "Mid-Senior"
+      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+    - name: "Programme Manager (Marine/Ocean Conservation)"
+      level: "Mid-Senior"
+      fit: "primary"
+    - name: "Grants & Philanthropy / Resource Mobilisation"
+      level: "Mid-Senior"
+      fit: "primary"
+    - name: "Development Officer"
+      level: "Mid"
+      fit: "secondary"
+    - name: "Community Engagement Coordinator"
+      level: "Mid"
+      fit: "secondary"
+    - name: "Conservation Finance Officer"
+      level: "Mid-Senior"
+      fit: "secondary"
+
+narrative:
+  headline: "Fundraising & Programme Manager | Non-Profit & Conservation Sector"
+  exit_story: "6+ years raising $1.5M+ for education and social impact programmes across India and Southeast Asia. Now pivoting to apply fundraising, partnerships, and programme management expertise to ocean and environmental conservation across the Asia Pacific region."
+  superpowers:
+    - "Major donor and corporate partnership cultivation"
+    - "Grant writing and bid management"
+    - "Fundraising department restructure and CRM transformation"
+    - "Programme delivery and cross-cultural stakeholder management"
+    - "Team leadership and capacity building"
+  proof_points:
+    - name: "Pardada Pardadi — Fundraising restructure"
+      hero_metric: "Grew annual funding from $1M to $1.5M; expanded sponsorships from 1,400 to 2,000 students"
+    - name: "EY Foundation workplace giving pilot"
+      hero_metric: "300+ new student sponsorships in year one"
+    - name: "Solar energy in-kind partnership"
+      hero_metric: "Secured fully funded solar installation; reduced MOU lead time ~25%"
+    - name: "Graduate recruitment events (Deloitte, JP Morgan, Rolls-Royce)"
+      hero_metric: "Managed 300+ events; drove 20% increase in applications"
+
+compensation:
+  target_range: "$50,000+ USD"
+  currency: "USD"
+  minimum: "$50,000"
+  location_flexibility: "Asia Pacific region; open to remote and hybrid"
+
+location:
+  country: "Thailand"
+  city: "Bangkok"
+  timezone: "ICT (UTC+7)"
+  visa_status: "Check per country — currently based in Thailand"
+  target_region: "Asia Pacific"
